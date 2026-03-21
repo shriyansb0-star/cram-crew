@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        
+    <meta charset="UTF-8" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+    <title>Find a Study Buddy!</title>
+        
+    <style>
+              body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f9ff; color: #333; padding: 20px; }
+              .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+              h1 { color: #2563eb; text-align: center; }
+              .filter-section { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; background: #e0f2fe; padding: 15px; border-radius: 10px; }
+              select { padding: 8px; border-radius: 5px; border: 1px solid #bae6fd; }
+              .buddy-card { border: 2px solid #e2e8f0; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
+              .buddy-card:hover { border-color: #3b82f6; background-color: #f8fafc; }
+              .style-tag { background: #dcfce7; color: #166534; padding: 4px 8px; border-radius: 5px; font-size: 0.8em; font-weight: bold; }
+              .btn { background: #2563eb; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
+          
+    </style>
+  </head>
+  <body>
+    <div class="container">
+          
+      <h1>📚 Study Buddy Finder</h1>
+          
+      <p style="text-align: center">Find a friend to ace that test with!</p>
+
+          
+      <div class="filter-section">
+                <select id="subjectFilter">
+                      
+          <option value="all">All Subjects</option>
+                      
+          <option value="math">Math</option>
+                      
+          <option value="science">Science</option>
+                      
+          <option value="history">History</option>
+                  
+        </select>
+
+                <select id="styleFilter">
+                      
+          <option value="all">Any Style</option>
+                      
+          <option value="quiet">Quiet (Silent Focus)</option>
+                      
+          <option value="collaborative">Collaborative (Talking)</option>
+                      
+          <option value="group">Group Project</option>
+                  
+        </select>
+                         <button class="btn" onclick="filterBuddies()">
+          Find Matches
+        </button>
+            
+      </div>
+
+          
+      <div id="buddyList">
+                
+        <div class="buddy-card" data-subject="math" data-style="quiet">
+                      
+          <div>
+                            <strong>Alex P. (6th Grade)</strong><br />
+                            <span>Subject: Math | Available: Mon/Wed 4pm</span>
+                        
+          </div>
+                      <span class="style-tag">Quiet</span>         
+        </div>
+
+                
+        <div
+          class="buddy-card"
+          data-subject="science"
+          data-style="collaborative"
+        >
+                      
+          <div>
+                            <strong>Sam R. (7th Grade)</strong><br />
+                            <span>Subject: Science | Available: Weekends</span>
+                        
+          </div>
+                      <span class="style-tag">Collaborative</span>         
+        </div>
+            
+      </div>
+    </div>
+    <div style="margin-bottom: 40px; text-align: center">
+          
+      <h2>Join the Club! 📝</h2>
+          
+      <p>Fill out this form to be added to our buddy list:</p>
+               <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeMu2YCe99GbZy3Fin0Dp3nbdeV7nZCgRby3W7oGakbCK4k8g/viewform?embedded=true"
+        width="640"
+        height="1467"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        >Loading…</iframe
+      >
+    </div>
+
+    <script>
+      function filterBuddies() {
+        const sub = document.getElementById("subjectFilter").value;
+        const style = document.getElementById("styleFilter").value;
+        const cards = document.querySelectorAll(".buddy-card");
+
+        cards.forEach((card) => {
+          const matchSub =
+            sub === "all" || card.getAttribute("data-subject") === sub;
+          const matchStyle =
+            style === "all" || card.getAttribute("data-style") === style;
+          card.style.display = matchSub && matchStyle ? "flex" : "none";
+        });
+      }
+    </script>
+  </body>
+</html>
