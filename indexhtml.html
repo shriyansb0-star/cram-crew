@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Buddy Finder</title>
+    <title>Cram-Crew | Study Smarter</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <nav>
-        <div class="logo">StudyBuddy</div>
+        <div class="logo">Cram-Crew</div>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="study-buddy.html">Find a Buddy</a></li> <li><a href="#" class="btn-nav">Contact</a></li>
+            <li><a href="study-buddy.html">Find a Buddy</a></li> <li><a href="#features">How it Works</a></li>
+            <li><a href="#" class="btn-nav">Contact</a></li>
         </ul>
     </nav>
 
@@ -23,28 +25,37 @@
         </div>
     </header>
 
-    <section class="features">
+    <section id="features" class="features">
         <h2>How We Match You</h2>
         <div class="feature-grid">
             <div class="card">
                 <h3>📚 Same Classes</h3>
-                <p>We pair you with students in your specific courses.</p>
+                <p>We pair you with students currently enrolled in your specific course sections.</p>
             </div>
             <div class="card">
                 <h3>🕒 Sync'd Schedules</h3>
-                <p>Find partners who are free when you are.</p>
+                <p>Forget the back-and-forth. We find partners who are free when you are.</p>
             </div>
             <div class="card">
                 <h3>🎧 Study Style</h3>
-                <p>From "Quiet" to "Collaborative," find your match.</p>
+                <p>From "Silent Library Mode" to "Collaborative Whiteboarding," find your match.</p>
             </div>
         </div>
     </section>
 
     <section id="join" class="cta-section">
         <h2>Ready to Cram?</h2>
-        <p>Click below to see who is available:</p>
-        <a href="study-buddy.html" style="background:#2563eb; color:white; padding:15px; text-decoration:none; border-radius:5px;">Go to Finder Page</a>
+        <p>Select your preferred style and get started:</p>
+        <div class="style-tags">
+            <span class="tag">Quiet</span>
+            <span class="tag">Collaborative</span>
+            <span class="tag">Group</span>
+            <span class="tag">Solo (Accountability)</span>
+        </div>
+        <a href="study-buddy.html" style="text-decoration: none;">
+            <button class="primary-btn">Create Your Profile</button>
+        </a>
     </section>
+
 </body>
 </html>
